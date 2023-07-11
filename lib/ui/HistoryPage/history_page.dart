@@ -7,8 +7,9 @@ import 'package:testproject/ui/widgets/pet_detail_listtile.dart';
 import '../../core/constants/string_constant.dart';
 import '../../core/constants/text_styles.dart';
 
-class HistoryPage extends GetWidget<HistoryPageController>{
+class HistoryPage extends GetWidget<HistoryPageController> {
   const HistoryPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,10 +20,14 @@ class HistoryPage extends GetWidget<HistoryPageController>{
         ),
         centerTitle: true,
       ),
-      body: ListView.builder(
-        itemCount: controller.adoptedPetDetails.length,
-          itemBuilder: (context, index){
-        return PetDetailListTile(petDetail: controller.adoptedPetDetails[index], randomColor: RandomColor.getRandomColor());
+      body: Obx(() {
+        return ListView.builder(
+            itemCount: controller.adoptedPetDetails.length,
+            itemBuilder: (context, index) {
+              return PetDetailListTile(
+                  petDetail: controller.adoptedPetDetails[index],
+                  randomColor: RandomColor.getRandomColor());
+            });
       }),
     );
   }

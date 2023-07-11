@@ -16,8 +16,9 @@ class PetDetailListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(height: 8,),
         Text(DateFormat("MMM dd, yyyy").format(petDetail.adoptedAt!), style: AppTextStyle.description,),
-        SizedBox(height: 8,),
+        const SizedBox(height: 8,),
         ListTile(
           tileColor: randomColor,
           leading: Container(
